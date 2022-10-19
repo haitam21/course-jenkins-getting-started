@@ -19,8 +19,8 @@ pipeline {
                 always {
                     junit '*target/surefire-reports/TEST-*.xml'
                     archiveArtifacts 'target/*.jar'
-                // }
-                // changed {
+                }
+                changed {
                     emailext attachLog: true, 
                         body: "PLease go to ${BUILD_URL} and verify the build", 
                         compressLog: true, 
